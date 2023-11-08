@@ -9,22 +9,20 @@
 // This line of code creates a variable to hold your faccate picture
 // You will use it later.
 PImage cat;
-int x=0;
-int y=0;
+int x=218;
+int y=181;
 
 void setup() {
   
-// 2. The code below loads your cat picture into the program. 
-//     Make sure the file name is correct for the cat image you saved earlier
+
 cat = loadImage("cat.jpg");
   
-// 3. Set the size of the sketch. Make it big enough to show the cat you chose.
 
-// 4. Resize the cat so it is the same size as the sketch
+size(500, 500);
 
-// 5. DRAW CAT.    Use the background() command to make the cat the background of the sketch
-//    Run the program to see if the cat is drawn. Get this working before you go on.
- 
+cat.resize(500, 500);
+
+ background(cat);
 
   }
 
@@ -35,8 +33,17 @@ void draw() {
       if(mousePressed){
           println("Mouse’s x-position: " + mouseX + "\n" + "Mouse’s y-position: " + mouseY + "\n");
       }
-
+noStroke();
+fill(255, 0, 0);
+ellipse(x, y, 20, 20);
+ ellipse(x+54, y, 20, 20);
 // 7. Run the program and click on one of the cat's eyes. 
+if (Y> height){
+  background(cat);
+  x=218; 
+  y=181;
+
+}
 //    The x,y position of the eye will be printed at the bottom of your processing window. 
 //    Variables for x and y have been created at the top of your sketch, 
 //    now you can set them equal to the values you just found.
@@ -51,7 +58,7 @@ void draw() {
 // 10 Use the ellipse() command to draw a circle on the eye (you will have to guess its size). 
 //    Use the x and y variables you just created to place the ellipse in the correct location.
 //                  The ellipse command looks like this:
-                ellipse(x, y, width, height);
+              
 // Run the program to make sure it is in the right place and is the right size.
 }
 
@@ -59,8 +66,8 @@ void draw() {
 //      the space bar. Run the program to test it.
 //      If you want it to move to the left, change to x-1=.
 void keyPressed() {
-    x+=1;
-    y+=1;
+    x+=4;
+    y+=4;
     
 // 12.  If you want them to go faster, add more than one each time the key is pressed    
 }
